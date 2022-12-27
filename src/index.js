@@ -7,11 +7,28 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'font-awesome/css/font-awesome.css'
 import Products from './components/products';
 import Counters from './components/counters';
+import NavBar from './components/navBar';
+import {
+  BrowserRouter as Router,
+  Routes ,
+  Route,
+  Link
+} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Counters />
+   <NavBar/>
+    <Router>
+      <Routes >
+        <Route path="">
+        <Counters />
+        </Route>
+        <Route path="/products">
+        <Products />
+        </Route>
+      </Routes >
+    </Router>
   </React.StrictMode>
 );
 
