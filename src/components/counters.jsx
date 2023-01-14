@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Counter from './counter';
+import Barcode from 'react-barcode';
+import QrScanner from 'qr-scanner';
+// import javascriptBarcodeReader from 'javascript-barcode-reader';
 class Counters extends Component {
     state = {
         counters: [
@@ -18,6 +21,32 @@ class Counters extends Component {
 
         ]
     }
+
+    
+    barCodeScanner = () => {
+
+        // javascriptBarcodeReader({
+        //     /* Image file Path || {data: Uint8ClampedArray, width, height} || HTML5 Canvas ImageData */
+        //     image: source,
+        //     barcode: 'code-2of5',
+        //     // barcodeType: 'industrial',
+        //     options: {    
+        //       // useAdaptiveThreshold: true // for images with sahded portions
+        //       // singlePass: true
+        //     }
+        //   })
+        //     .then(code => {
+        //       console.log(code)
+        //     })
+        //     .catch(err => {
+        //       console.log(err)
+        //     })
+        
+        return <Barcode value="barcode-example" />;
+
+    }
+
+
     handleDelete = (counter) =>{
         const allCounters = this.state.counters.filter(c => c.id!=counter.id)
         
@@ -37,6 +66,8 @@ class Counters extends Component {
     render() {
         return (
             <div>
+                <Barcode value="barcode-example" />
+
                 {this.state.counters.map(counter =>
                      <Counter
                       key={counter.id}
