@@ -15,10 +15,11 @@ import {
   Link
 } from 'react-router-dom';
 import BarCodeScanner from './components/barcodetesting';
+import Profile from './components/webCamTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-        <BarCodeScanner />
+        <Profile />
 );
 
 // If you want to start measuring performance in your app, pass a function
