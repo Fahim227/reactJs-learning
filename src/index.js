@@ -16,10 +16,11 @@ import {
 } from 'react-router-dom';
 import BarCodeScanner from './components/barcodetesting';
 import Profile from './components/webCamTest';
+import QrReadTest from './components/qrTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-        <Profile />
+        <QrReadTest />
 );
 
 // If you want to start measuring performance in your app, pass a function

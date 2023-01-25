@@ -53,9 +53,28 @@ const Profile = () => {
     return new File([u8arr], filename, {type:mime});
 }
 
+function handleScan(data) {
+  console.log(data)
+}
+function handleError(err) {
+  console.log(err)
+}
+
 
   return (
     <div>
+      <QrScanner
+  onError={handleError}
+  onScan={handleScan}
+  style={{ width: '100%' }}
+  facingMode={'environment'}
+  videoConstraints={{
+    width: 600,
+    height: 400,
+    facingMode: 'environment'
+  }}
+/>
+
       <h2 className="mb-5 text-center">
         React Photo Capture using Webcam Examle
       </h2>
